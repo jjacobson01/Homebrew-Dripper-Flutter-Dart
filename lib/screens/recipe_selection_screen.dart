@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:homebrew_dripper/models/coffee_recipe.dart';
 import 'package:homebrew_dripper/screens/recipe_detail_screen.dart';
 import 'package:homebrew_dripper/utils/coffee_data.dart';
-//import 'dart:js' as js;
+import 'package:url_launcher/url_launcher.dart';
 
 class RecipeSelectionScreen extends StatelessWidget {
   @override
@@ -94,41 +94,53 @@ class ResourceList extends StatelessWidget {
         ListTile(
             title: Text("Coffee"),
             trailing: Icon(Icons.chevron_right),
-            onTap: () {
-              /*Navigator.push(
-                  context,*/
-              /*js.context.callMethod(
-                  'open', ['https://www.coffeestore.com/corona/beans.html']);*/
+            onTap: () async {
+              final url = 'https://www.coffeestore.com/corona/beans.html';
+              if (await canLaunch(url)) {
+                await launch(
+                  url,
+                  forceSafariVC: false,
+                );
+              }
             }),
         Divider(thickness: 1, color: Color(0xff4C748B), height: 0),
         ListTile(
             title: Text("Grinders"),
             trailing: Icon(Icons.chevron_right),
-            onTap: () {
-              /*Navigator.push(
-                  context,*/
-              /*js.context.callMethod(
-                  'coffee', ['https://www.coffeestore.com/corona/beans.html']);*/
+            onTap: () async {
+              final url = 'https://www.coffeestore.com/grinders.html';
+              if (await canLaunch(url)) {
+                await launch(
+                  url,
+                  forceSafariVC: false,
+                );
+              }
             }),
         Divider(thickness: 1, color: Color(0xff4C748B), height: 0),
         ListTile(
             title: Text("Kettles"),
             trailing: Icon(Icons.chevron_right),
-            onTap: () {
-              /*Navigator.push(
-                  context,*/
-              /*js.context.callMethod(
-                  'coffee', ['https://www.coffeestore.com/corona/beans.html']);*/
+            onTap: () async {
+              final url = 'https://prima-coffee.com/brew/coffee/kettles';
+              if (await canLaunch(url)) {
+                await launch(
+                  url,
+                  forceSafariVC: false,
+                );
+              }
             }),
         Divider(thickness: 1, color: Color(0xff4C748B), height: 0),
         ListTile(
             title: Text("Homewbrew Dripper"),
             trailing: Icon(Icons.chevron_right),
-            onTap: () {
-              /*Navigator.push(
-                  context,*/
-              /*js.context.callMethod(
-                  'coffee', ['https://www.coffeestore.com/corona/beans.html']);*/
+            onTap: () async {
+              final url = 'https://www.coffeestore.com/barista/brewing.html';
+              if (await canLaunch(url)) {
+                await launch(
+                  url,
+                  forceSafariVC: false,
+                );
+              }
             }),
       ],
     );
