@@ -20,7 +20,7 @@ void main() {
 
     // add whatever tests help give you confidence
     expect(recipes[1], isA<CoffeeRecipe>());
-    expect(recipes[1].name, "Test Recipe");
+    expect(recipes[1].name, "Grimpeur");
     expect(recipes[1].steps, isA<List<RecipeStep>>());
   });
   test('loadRecipes should give back the recipes in my app', () {
@@ -28,15 +28,25 @@ void main() {
 
     // add whatever tests help give you confidence
     expect(recipes[2], isA<CoffeeRecipe>());
-    expect(recipes[2].name, "Grimpeur");
+    expect(recipes[2].name, "Food & Wine");
     expect(recipes[2].steps, isA<List<RecipeStep>>());
   });
+
   test('loadRecipes should give back the recipes in my app', () {
     List<CoffeeRecipe> recipes = CoffeeData.loadRecipes();
 
     // add whatever tests help give you confidence
     expect(recipes[3], isA<CoffeeRecipe>());
-    expect(recipes[3].name, "Food & Wine");
+    expect(recipes[3].name, "Blue Bottle");
     expect(recipes[3].steps, isA<List<RecipeStep>>());
+  });
+
+  test('loadRecipes should give back the recipes in my app', () {
+    List<CoffeeRecipe> recipes = CoffeeData.loadRecipes();
+
+    // add whatever tests help give you confidence
+    expect(recipes[4], isA<CoffeeRecipe>());
+    expect(recipes[4].name, "Test Recipe");
+    expect(recipes[4].steps, isA<List<RecipeStep>>());
   });
 }
