@@ -1,13 +1,17 @@
-import 'package:homebrew_dripper/models/coffee_recipe.dart';
 import 'package:homebrew_dripper/models/recipe_step.dart';
 import 'package:test/test.dart';
 
 void main() {
-  test('creates a valid recipe step', () {
-    //make a recipe step
-
-    //check that it has the right data
+  //
+  RecipeStep stepTest = RecipeStep("Hot Chocolate > Coffee", 15);
+  RecipeStep fixStep = RecipeStep("", -1);
+  test("Make a recipe step and test", () {
+    expect(stepTest.text, ("Hot Chocolate > Coffee"));
+    expect(stepTest.time, 15);
   });
 
-  //how do we test rejecting invalid recipe steps?
+  test('default values go in place of invalid inputs', () {
+    expect(fixStep.text, "No steps provided");
+    expect(fixStep.time, 1);
+  });
 }

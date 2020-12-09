@@ -3,6 +3,7 @@ import 'package:homebrew_dripper/models/coffee_recipe.dart';
 import 'package:homebrew_dripper/screens/recipe_detail_screen.dart';
 import 'package:homebrew_dripper/utils/coffee_data.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class RecipeSelectionScreen extends StatelessWidget {
   @override
@@ -19,7 +20,7 @@ class RecipeSelectionScreen extends StatelessWidget {
           Text("Coffee Recipes",
               key: Key("coffee-recipes"),
               style: TextStyle(
-                  fontFamily: 'Kollektif',
+                  //fontFamily: 'Kollektif',
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
                   letterSpacing: 2,
@@ -59,7 +60,7 @@ class RecipeSelectionScreen extends StatelessWidget {
 
 class RecipeList extends StatelessWidget {
   List<CoffeeRecipe> recipes = CoffeeData.loadRecipes();
-
+  int counter = 0;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -67,7 +68,12 @@ class RecipeList extends StatelessWidget {
         for (CoffeeRecipe recipe in recipes)
           Column(children: [
             ListTile(
-                title: Text(recipe.name),
+                title: Text(recipe.name,
+                    style: TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontSize: 14,
+                        letterSpacing: 2,
+                        color: Color(0xff4c748b))),
                 trailing: Icon(
                   Icons.chevron_right,
                   key: Key(recipe.name),
@@ -79,7 +85,8 @@ class RecipeList extends StatelessWidget {
                         builder: (context) => RecipeDetailScreen(recipe)),
                   );
                 }),
-            Divider(thickness: 1, color: Color(0xff4C748B), height: 0),
+            if (recipe.name != "Test Recipe")
+              Divider(thickness: 1, color: Color(0xff4C748B), height: 0),
           ]),
       ],
     );
@@ -92,7 +99,12 @@ class ResourceList extends StatelessWidget {
     return Column(
       children: [
         ListTile(
-            title: Text("Coffee"),
+            title: Text("Coffee",
+                style: TextStyle(
+                    fontFamily: 'Monserrat',
+                    fontSize: 14,
+                    letterSpacing: 2,
+                    color: Color(0xff4c748b))),
             trailing: Icon(Icons.chevron_right),
             onTap: () async {
               final url = 'https://www.coffeestore.com/corona/beans.html';
@@ -105,7 +117,14 @@ class ResourceList extends StatelessWidget {
             }),
         Divider(thickness: 1, color: Color(0xff4C748B), height: 0),
         ListTile(
-            title: Text("Grinders"),
+            title: Text(
+              "Grinders",
+              style: TextStyle(
+                  fontFamily: 'Monserrat',
+                  fontSize: 14,
+                  letterSpacing: 2,
+                  color: Color(0xff4c748b)),
+            ),
             trailing: Icon(Icons.chevron_right),
             onTap: () async {
               final url = 'https://www.coffeestore.com/grinders.html';
@@ -118,7 +137,14 @@ class ResourceList extends StatelessWidget {
             }),
         Divider(thickness: 1, color: Color(0xff4C748B), height: 0),
         ListTile(
-            title: Text("Kettles"),
+            title: Text(
+              "Kettles",
+              style: TextStyle(
+                  fontFamily: 'Monserrat',
+                  fontSize: 14,
+                  letterSpacing: 2,
+                  color: Color(0xff4c748b)),
+            ),
             trailing: Icon(Icons.chevron_right),
             onTap: () async {
               final url = 'https://prima-coffee.com/brew/coffee/kettles';
@@ -131,7 +157,14 @@ class ResourceList extends StatelessWidget {
             }),
         Divider(thickness: 1, color: Color(0xff4C748B), height: 0),
         ListTile(
-            title: Text("Homewbrew Dripper"),
+            title: Text(
+              "Homebrew Dripper",
+              style: TextStyle(
+                  fontFamily: 'Monserrat',
+                  fontSize: 14,
+                  letterSpacing: 2,
+                  color: Color(0xff4c748b)),
+            ),
             trailing: Icon(Icons.chevron_right),
             onTap: () async {
               final url = 'https://www.coffeestore.com/barista/brewing.html';

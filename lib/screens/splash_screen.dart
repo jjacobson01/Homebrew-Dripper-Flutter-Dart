@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'recipe_selection_screen.dart';
+//import 'package:google_fonts/google_fonts.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -15,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   startTime() async {
-    var duration = Duration(seconds: 2);
+    var duration = Duration(seconds: 20);
     return Timer(duration, navigateToDeviceScreen);
   }
 
@@ -36,8 +37,9 @@ class _SplashScreenState extends State<SplashScreen> {
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 48,
+                    fontWeight: FontWeight.bold,
                     fontFamily: "Norwester")),
-            Text("Great Coffee at Home",
+            Text("Handmade Coffee",
                 style: TextStyle(
                     color: Colors.white, fontSize: 18, fontFamily: "Kollektif"))
           ],

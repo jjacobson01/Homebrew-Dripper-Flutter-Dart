@@ -34,11 +34,11 @@ CoffeeRecipe grimpeurRecipe() {
 
 CoffeeRecipe foodWineRecipe() {
   List<RecipeStep> steps = [
-    RecipeStep("Add 300g water", 25),
-    RecipeStep("Let stand, covered", 60),
-    RecipeStep("Uncover and quickly stir", 15),
-    RecipeStep("Let stand, covered", 90),
-    RecipeStep("Stir coffee once more", 10),
+    RecipeStep("Add 300g water", 1),
+    RecipeStep("Let stand, covered", 1),
+    RecipeStep("Uncover and quickly stir", 1),
+    RecipeStep("Let stand, covered", 1),
+    RecipeStep("Stir coffee once more", 1),
   ];
   CoffeeRecipe recipe = CoffeeRecipe(
       "Food & Wine",
@@ -72,11 +72,11 @@ CoffeeRecipe blueBottleRecipe() {
 
 CoffeeRecipe makeTestRecipe() {
   List<RecipeStep> steps = [
-    RecipeStep("Add 360g water", 5),
-    RecipeStep("Cover and wait", 5),
-    RecipeStep("Stir", 5),
-    RecipeStep("Cover and wait", 5),
-    RecipeStep("Stir", 5),
+    RecipeStep("Add 360g water", 1),
+    RecipeStep("Cover and wait", 1),
+    RecipeStep("Stir", 1),
+    RecipeStep("Cover and wait", 1),
+    RecipeStep("Stir", 1),
   ];
   CoffeeRecipe recipe = CoffeeRecipe(
       "Test Recipe",

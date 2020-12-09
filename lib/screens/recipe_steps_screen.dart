@@ -5,6 +5,10 @@ import 'package:homebrew_dripper/models/coffee_recipe.dart';
 import 'package:homebrew_dripper/models/recipe_step.dart';
 import 'package:homebrew_dripper/screens/done_screen.dart';
 
+extension on Duration {
+  String format() => '$this'.substring(2, 7);
+}
+
 class RecipeStepsScreen extends StatefulWidget {
   CoffeeRecipe recipe;
 
@@ -70,16 +74,71 @@ class _RecipeStepsScreenState extends State<RecipeStepsScreen> {
     RecipeStep currentRecipeStep = widget.recipe.steps[currentStep];
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Recipe Steps"),
-      ),
+      backgroundColor: new Color(0xFF4C748B),
       body: ListView(
         children: [
-          Text("${currentRecipeStep.text}"),
-          Text("${stepTimeRemaining}"),
-          Text("Steps"),
+          Divider(
+            height: 50,
+          ),
+          Text(
+            "${stepTimeRemaining}",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.w400,
+              color: new Color(0xFFFFFFFF),
+              fontSize: 96,
+              fontFamily: 'Kollektif',
+            ),
+          ),
+          Divider(
+            height: 50,
+          ),
+          Text(
+            "${currentRecipeStep.text}",
+            key: Key(currentRecipeStep.text),
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.w400,
+              color: new Color(0xFFFFFFFF),
+              fontSize: 24,
+              fontFamily: 'Kollektif',
+            ),
+          ),
+          Divider(
+            height: 50,
+          ),
+          Text(
+            "Steps",
+            style: TextStyle(
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.w400,
+              color: new Color(0xFFFFFFFF),
+              fontSize: 14,
+              fontFamily: 'Kollektif',
+            ),
+          ),
           for (RecipeStep step in remainingSteps)
-            ListTile(title: Text(step.text))
+            ListTile(
+              title: Text(
+                step.text,
+                style: TextStyle(
+                  fontStyle: FontStyle.normal,
+                  fontWeight: FontWeight.w400,
+                  color: new Color(0xFFFFFFFF),
+                  fontSize: 12,
+                  fontFamily: 'Kollektif',
+                ),
+              ),
+              trailing: Text(Duration(seconds: step.time).format().toString(),
+                  style: TextStyle(
+                      fontFamily: 'Kollektif',
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 1,
+                      color: Color(0xFFFFFFFF))),
+            ),
         ],
       ),
     );
