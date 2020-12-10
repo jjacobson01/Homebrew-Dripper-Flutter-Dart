@@ -59,7 +59,6 @@ class RecipeSelectionScreen extends StatelessWidget {
 
 class RecipeList extends StatelessWidget {
   List<CoffeeRecipe> recipes = CoffeeData.loadRecipes();
-  int counter = 0;
   @override
   Widget build(BuildContext context) {
     return Column(
