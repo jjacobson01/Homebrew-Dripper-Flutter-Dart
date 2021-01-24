@@ -1,6 +1,8 @@
-https://group13-se2-utrgv.atlassian.net/jira/people/5fbd4d433b4f5900689eaadc
+Worked with a team to create a more advanced version of the original homebrew app. Used Flutter(framework), Dart(programming language) and Visual Studio Code(code editor). Figma link and Jira link below. Jira software is what we used as a team to coordinate and set up tasks for each of us to complete within a given timeframe.
 
 https://www.figma.com/file/ytQjWKI9RgqZVgNm5hQYzD/Homebrew-Dripper
+https://group13-se2-utrgv.atlassian.net/jira/people/5fbd4d433b4f5900689eaadc
+
 
 # homebrew_dripper
 
